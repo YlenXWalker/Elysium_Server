@@ -41,7 +41,6 @@ struct clan {
     int32 kick_time;  
     int32 check_time;    
     int32 buff_icon;	  
-    char constant[NAME_LENGTH];  // For clan constants like "SWORDCLAN"    
     struct script_code* script;
 	  
     // Additional fields for YAML support    

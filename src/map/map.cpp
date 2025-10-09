@@ -3111,6 +3111,9 @@ void map_removemobs(int16 m)
 	mapdata->mob_delete_timer = add_timer(gettick()+battle_config.mob_remove_delay, map_removemobs_timer, m, 0);
 }
 
+// Clan member cleanup timer function - currently unused
+// KickTime functionality is disabled by default (kicktime: 0)
+// This function exists for future use if automatic member cleanup is needed
 TIMER_FUNC(clan_member_cleanup) {  
     for (const auto& pair : clan_db_yaml) {  
         std::shared_ptr<clan> clan_entry = pair.second;  
