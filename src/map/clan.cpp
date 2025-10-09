@@ -448,7 +448,17 @@ void clan_buff_start(map_session_data* sd, struct clan* c) {
         case EFST_ARCWANDCLAN: sc_constant = SC_ARCWANDCLAN; break;      
         case EFST_GOLDENMACECLAN: sc_constant = SC_GOLDENMACECLAN; break;      
         case EFST_CROSSBOWCLAN: sc_constant = SC_CROSSBOWCLAN; break;      
-        case EFST_JUMPINGCLAN: sc_constant = SC_JUMPINGCLAN; break;      
+        case EFST_JUMPINGCLAN: sc_constant = SC_JUMPINGCLAN; break;
+        case EFST_ANGELCLAN: sc_constant = SC_ANGELCLAN; break;
+        case EFST_BRUTECLAN: sc_constant = SC_BRUTECLAN; break;
+        case EFST_DEMIHUMANCLAN: sc_constant = SC_DEMIHUMANCLAN; break;
+        case EFST_DEMONCLAN: sc_constant = SC_DEMONCLAN; break;
+        case EFST_DRAGONCLAN: sc_constant = SC_DRAGONCLAN; break;
+        case EFST_FISHCLAN: sc_constant = SC_FISHCLAN; break;
+        case EFST_FORMLESSCLAN: sc_constant = SC_FORMLESSCLAN; break;
+        case EFST_INSECTCLAN: sc_constant = SC_INSECTCLAN; break;
+        case EFST_PLANTCLAN: sc_constant = SC_PLANTCLAN; break;
+        case EFST_UNDEADCLAN: sc_constant = SC_UNDEADCLAN; break;      
         default:       
             ShowError("Unknown clan buff_icon: '" CL_WHITE "%d" CL_RESET "'.\n", c->buff_icon);  
             return;      
@@ -478,7 +488,17 @@ static void clan_buff_end(map_session_data* sd, struct clan* c) {
         case EFST_ARCWANDCLAN: sc_constant = SC_ARCWANDCLAN; break;    
         case EFST_GOLDENMACECLAN: sc_constant = SC_GOLDENMACECLAN; break;    
         case EFST_CROSSBOWCLAN: sc_constant = SC_CROSSBOWCLAN; break;    
-        case EFST_JUMPINGCLAN: sc_constant = SC_JUMPINGCLAN; break;    
+        case EFST_JUMPINGCLAN: sc_constant = SC_JUMPINGCLAN; break;
+        case EFST_ANGELCLAN: sc_constant = SC_ANGELCLAN; break;
+        case EFST_BRUTECLAN: sc_constant = SC_BRUTECLAN; break;
+        case EFST_DEMIHUMANCLAN: sc_constant = SC_DEMIHUMANCLAN; break;
+        case EFST_DEMONCLAN: sc_constant = SC_DEMONCLAN; break;
+        case EFST_DRAGONCLAN: sc_constant = SC_DRAGONCLAN; break;
+        case EFST_FISHCLAN: sc_constant = SC_FISHCLAN; break;
+        case EFST_FORMLESSCLAN: sc_constant = SC_FORMLESSCLAN; break;
+        case EFST_INSECTCLAN: sc_constant = SC_INSECTCLAN; break;
+        case EFST_PLANTCLAN: sc_constant = SC_PLANTCLAN; break;
+        case EFST_UNDEADCLAN: sc_constant = SC_UNDEADCLAN; break;    
         default:     
             return;
     }  
