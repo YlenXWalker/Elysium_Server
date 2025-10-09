@@ -87,7 +87,6 @@ map_session_data* clan_getavailablesd( struct clan& clan );
 int32 clan_get_alliance_count( struct clan& clan, int32 flag );
   
 // Buff system  
-void clan_buff_start(map_session_data* sd, struct clan* c);  
-void clan_buff_end(map_session_data* sd, struct clan* c);
+void clan_buff_start(map_session_data* sd, struct clan* c);
   
 #endif /* CLAN_HPP */

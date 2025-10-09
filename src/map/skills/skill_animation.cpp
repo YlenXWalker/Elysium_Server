@@ -11,6 +11,9 @@
 #include <common/utilities.hpp>
 
 using namespace rathena;
+
+// Forward declaration for internal function
+static void skill_animation_clear_internal(struct block_list* bl);
   
 std::vector<s_animation_data> skill_animation_db;  
   

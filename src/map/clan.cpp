@@ -22,6 +22,9 @@
 #include "script.hpp"
 #include "status.hpp"
 
+// Forward declaration for internal function
+static void clan_buff_end(map_session_data* sd, struct clan* c);
+
 const std::string ClanDatabase::getDefaultLocation(){    
 	return std::string(db_path) + "/clan_db.yml";    
 }    
