@@ -22,6 +22,9 @@
 #include "script.hpp"
 #include "status.hpp"
 
+// Forward declaration for internal function
+static void clan_buff_end(map_session_data* sd, struct clan* c);
+
 const std::string ClanDatabase::getDefaultLocation(){    
 	return std::string(db_path) + "/clan_db.yml";    
 }    
@@ -76,7 +79,7 @@ uint64 ClanDatabase::parseBodyNode(const ryml::NodeRef& node) {
 		}  
 	} else {  
 		if (!exists)  
-			clan_entry->kick_time = 0; // 0 = disabled, no global fallback  
+			clan_entry->kick_time = 0; // 0 = disabled (default)  
 	}  
 
 	if (this->nodeExists(node, "CheckTime")) {  
@@ -142,6 +145,8 @@ uint64 ClanDatabase::parseBodyNode(const ryml::NodeRef& node) {
 	}
 
 	memset(clan_entry->alliance, 0, sizeof(clan_entry->alliance));    
+	clan_entry->allies.clear();
+	clan_entry->antagonists.clear();
 	int32 alliance_index = 0;  
 	  
 	if (this->nodeExists(node, "Allies")) {    
@@ -157,6 +162,7 @@ uint64 ClanDatabase::parseBodyNode(const ryml::NodeRef& node) {
 			clan_entry->alliance[alliance_index].opposition = 0; // 0 = ally    
 			clan_entry->alliance[alliance_index].clan_id = 0;  
 			safestrncpy(clan_entry->alliance[alliance_index].name, allyName.c_str(), NAME_LENGTH);    
+			clan_entry->allies.push_back(allyName); // Store in vector for YAML support
 			alliance_index++;    
 		}    
 	}  
@@ -174,6 +180,7 @@ uint64 ClanDatabase::parseBodyNode(const ryml::NodeRef& node) {
 			clan_entry->alliance[alliance_index].opposition = 1; // 1 = antagonist      
 			clan_entry->alliance[alliance_index].clan_id = 0;  
 			safestrncpy(clan_entry->alliance[alliance_index].name, antagonistName.c_str(), NAME_LENGTH);      
+			clan_entry->antagonists.push_back(antagonistName); // Store in vector for YAML support
 			alliance_index++;      
 		}      
 	}    

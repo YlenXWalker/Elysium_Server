@@ -175,7 +175,7 @@ Body:
     Buff:  
       Icon: "EFST_DEMIHUMANCLAN"  
       Script: |  
-        bonus bRace, RC_Brute;
+        bonus bRace, RC_DemiHuman;
         bonus2 bSubEle, Ele_All, 20;  
         bonus bHealPower, 100;
         bonus bDef, 10;
